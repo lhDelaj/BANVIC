@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_clients
+    description: Dimensao com informacao dos clientes
+    columns: 
+      - name: id_cliente
+      - name: nome_completo
+      - name: tipo_cliente
+      - name: data_inclusao
+      - name: ano_nascimento
+      - name: estado
+      - name: idade
+      - name: id_agencia
+      - name: id_colaborador
+      - name: saldo
+      - name: data_ultimo_lancamento
+      - name: numero_propostas_credito
+      - name: numero_propostas_credito_aprovadas
+      - name: Taxa_aprovacao_credito

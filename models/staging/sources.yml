@@ -1,0 +1,25 @@
+version: 2
+
+sources: 
+  - name: banvic
+    tables:
+      - name: agencias
+
+
+      - name: clientes
+
+
+
+      - name: colaborador_agencia
+
+
+
+      - name: colaboradores
+
+
+      - name: contas
+
+
+      - name: propostas_credito
+  
+      - name: transacoes
