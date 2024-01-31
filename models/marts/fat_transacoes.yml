@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fat_transacoes
+    description: fatos com uma transacao por linha
+    columns: 
+      - name: id_transacao
+      - name: id_conta
+      - name: data_transacao
+      - name: tipo_transacao
+      - name: valor_transacao

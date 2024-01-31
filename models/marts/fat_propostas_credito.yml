@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fat_proposta_credito
+    description: fatos com uma proposta de credito por linha
+    columns: 
+      - name: id_proposta
+      - name: id_cliente
+      - name: id_colaborador
+      - name: data_entrada_proposta
+      - name: taxa_juros_mensal
+      - name: valor_proposta
+      - name: valor_entrada
+      - name: valor_prestacao
+      - name: quantidade_parcelas
+      - name: carencia
+      - name: status

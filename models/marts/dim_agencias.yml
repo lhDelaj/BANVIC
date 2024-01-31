@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_agencias
+    description: Dimensao com informacao das agencias
+    columns: 
+      - name: id_agencia
+        description: Primary key para dimensao agencias
+        tests:
+          - unique
+          - not_null
+      - name: nome
+      - name: endereco
+      - name: cidade
+      - name: estado
+      - name: data_abertura
+      - name: tipo_agencia

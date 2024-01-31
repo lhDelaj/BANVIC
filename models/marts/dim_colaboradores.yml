@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_colaboradores
+    description: Dimensao com informacao dos colaboradores
+    columns: 
+      - name: id_colaborador
+      - name: nome_completo
+      - name: idade
+      - name: estado_colaborador
+      - name: id_agencia
+      - name: nome_agencia
+      - name: cidade
+      - name: tipo_agencia
