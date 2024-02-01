@@ -27,6 +27,7 @@ with
              ,(propostas_credito.valor_proposta-propostas_credito.valor_entrada) as valor_financiado
              ,(quantidade_parcelas*valor_prestacao) AS MontanteFinal
              ,((quantidade_parcelas*valor_prestacao)-(propostas_credito.valor_proposta-propostas_credito.valor_entrada)) as lucro
+             ,(((quantidade_parcelas*valor_prestacao)-(propostas_credito.valor_proposta-propostas_credito.valor_entrada))/(propostas_credito.valor_proposta-propostas_credito.valor_entrada))*100 as margem_lucro
         from propostas_credito
         left join dim_colaboradores on dim_colaboradores.id_colaborador = propostas_credito.id_colaborador
     )
