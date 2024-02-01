@@ -12,7 +12,13 @@ with
         select * 
         from {{ ref('erp_banvic_propostas_credito') }}
     )
-    , dim_clientes as (
+
+    , transacoes as (
+        select *
+        from {{ ref('erp_banvic_transacoes') }}
+    )
+
+    , join_tabelas as (
         select clientes.id_cliente
              ,clientes.nome_completo
              ,tipo_cliente
@@ -26,9 +32,12 @@ with
              ,data_ultimo_lancamento
              ,COUNT(DISTINCT propostas_credito.id_proposta) as numero_propostas_credito
              ,COUNT(DISTINCT CASE WHEN propostas_credito.status = 'Aprovada' THEN id_proposta END) as numero_propostas_credito_aprovadas
+             ,AVG(transacoes.valor_transacao) as valor_transacao_medio
+             ,extract(year from data_ultimo_lancamento) as ano_ultimo_lancamento
         from clientes
         left join contas on clientes.id_cliente = contas.id_conta
         left join propostas_credito on propostas_credito.id_cliente = clientes.id_cliente
+        left join transacoes on transacoes.id_conta = contas.id_conta
         group by clientes.id_cliente,
             nome_completo,
             tipo_cliente,
@@ -42,12 +51,23 @@ with
             data_ultimo_lancamento
         order by clientes.id_cliente
     )
+    
+     , generate_key as (
+        select  
+        row_number() over(order by id_cliente) as sk_cliente
+        , *
+        from join_tabelas
+    
+    )
+
 
     select * 
+        , (2024 -ano_ultimo_lancamento)  as anos_inativos
         , CASE 
             when numero_propostas_credito_aprovadas <> 0 THEN (numero_propostas_credito_aprovadas/numero_propostas_credito)*100
             else null
             end as Taxa_aprovacao_credito
-        from dim_clientes
+        from generate_key
+
     
    

@@ -15,5 +15,16 @@ with
             ,tipo_agencia
         from agencias
     )
-select * 
-from dim_agencias
+    
+    
+    , generate_key as (
+    select  
+        row_number() over(order by id_agencia) as sk_agencia
+        , *
+    from dim_agencias
+    
+    )
+
+
+    select *
+    from generate_key

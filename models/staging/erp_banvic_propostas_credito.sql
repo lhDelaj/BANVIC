@@ -12,8 +12,10 @@ with
             ,cast(quantidade_parcelas as int) as quantidade_parcelas
             ,cast(carencia as int) as carencia
             ,cast(status_proposta as string) as status
-        from {{ ref('propostas_credito') }}
+            from {{ ref('propostas_credito') }}
     )
 
     select *
+        ,(2024-(extract(year from data_entrada_proposta))) as anos_corridos
+        
      from propostas_credito

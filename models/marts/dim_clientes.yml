@@ -4,6 +4,10 @@ models:
   - name: dim_clients
     description: Dimensao com informacao dos clientes
     columns: 
+      - name: sk_cliente
+        tests:
+            - unique
+            - not_null
       - name: id_cliente
       - name: nome_completo
       - name: tipo_cliente

@@ -4,6 +4,10 @@ models:
   - name: fat_transacoes
     description: fatos com uma transacao por linha
     columns: 
+      - name: sk_transacao
+        tests:
+            - unique
+            - not_null
       - name: id_transacao
       - name: id_conta
       - name: data_transacao
