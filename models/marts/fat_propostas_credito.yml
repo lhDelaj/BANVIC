@@ -4,6 +4,10 @@ models:
   - name: fat_proposta_credito
     description: fatos com uma proposta de credito por linha
     columns: 
+      - name: sk_proposta
+        tests:
+            - unique
+            - not_null
       - name: id_proposta
       - name: id_cliente
       - name: id_colaborador

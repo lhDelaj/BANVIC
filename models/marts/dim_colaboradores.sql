@@ -12,7 +12,7 @@ with
         select * 
         from {{ ref('erp_banvic_colaborador_agencia') }}
     )
-    , dim_colaboradores as (
+    , join_tabelas as (
         select colaboradores.id_colaborador
             , colaboradores.nome_completo
             , colaboradores.idade
@@ -26,5 +26,14 @@ with
         left join agencias on agencias.id_agencia = colaborador_agencia.id_agencia
     )
 
-    select * 
-    from dim_colaboradores
+     , generate_key as (
+    select  
+        row_number() over(order by id_colaborador) as sk_colaborador
+        , *
+    from join_tabelas
+    
+    )
+
+
+    select *
+    from generate_key

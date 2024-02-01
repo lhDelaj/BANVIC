@@ -39,7 +39,7 @@ models:
   banvic:
     # Applies to all files under models/example/
     marts:
-      +materialized: view
+      +materialized: table
       +schema: marts
     staging:
       +materialized: table
