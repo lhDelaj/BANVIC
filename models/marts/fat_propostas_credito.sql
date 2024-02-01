@@ -25,8 +25,8 @@ with
              , propostas_credito.status
              , dim_colaboradores.id_agencia
              ,(propostas_credito.valor_proposta-propostas_credito.valor_entrada) as valor_financiado
-            , ((propostas_credito.valor_proposta-propostas_credito.valor_entrada) * POWER((1 + taxa_juros_mensal), (quantidade_parcelas))) AS MontanteFinal
-            ,(((propostas_credito.valor_proposta-propostas_credito.valor_entrada) * POWER((1 + taxa_juros_mensal), (quantidade_parcelas)))-(propostas_credito.valor_proposta-propostas_credito.valor_entrada)) as lucro
+             ,((propostas_credito.valor_proposta-propostas_credito.valor_entrada) * POWER((1 + taxa_juros_mensal), (quantidade_parcelas))) AS MontanteFinal
+             ,(((propostas_credito.valor_proposta-propostas_credito.valor_entrada) * POWER((1 + taxa_juros_mensal), (quantidade_parcelas)))-(propostas_credito.valor_proposta-propostas_credito.valor_entrada)) as lucro
         from propostas_credito
         left join dim_colaboradores on dim_colaboradores.id_colaborador = propostas_credito.id_colaborador
     )
