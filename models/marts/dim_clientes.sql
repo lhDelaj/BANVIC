@@ -67,7 +67,11 @@ with
             when numero_propostas_credito_aprovadas <> 0 THEN (numero_propostas_credito_aprovadas/numero_propostas_credito)*100
             else null
             end as Taxa_aprovacao_credito
-        from generate_key
+        , CASE 
+            when (2024 -ano_ultimo_lancamento) > 2 THEN 'Inativa'
+            else 'Ativa' 
+            end as status_conta     
+              from generate_key
 
     
    
