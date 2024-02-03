@@ -24,6 +24,9 @@ with
              , propostas_credito.carencia
              , propostas_credito.status
              , dim_colaboradores.id_agencia
+             , CASE WHEN propostas_credito.status = 'Aprovada' THEN 'Aprovada' 
+               ELSE 'Nao Aprovada'
+               end as status_agrupado 
              ,(propostas_credito.valor_proposta-propostas_credito.valor_entrada) as valor_financiado
              ,(quantidade_parcelas*valor_prestacao) AS MontanteFinal
              ,((quantidade_parcelas*valor_prestacao)-(propostas_credito.valor_proposta-propostas_credito.valor_entrada)) as lucro
