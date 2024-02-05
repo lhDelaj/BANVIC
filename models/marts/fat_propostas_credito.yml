@@ -9,13 +9,36 @@ models:
             - unique
             - not_null
       - name: id_proposta
+        description: id para cada proposta de credito
       - name: id_cliente
+        description: id para o cliente ao qual foi feita a proposta
       - name: id_colaborador
+        description: colaborador responsavel pela proposta
       - name: data_entrada_proposta
+        description: data da entrada da proposta
       - name: taxa_juros_mensal
+        description: taxa de juros mensal
       - name: valor_proposta
+        description: valor da proposta
       - name: valor_entrada
+        description: valor da entrada pago pelo clinte
       - name: valor_prestacao
+        description: valor de cada prestacao
       - name: quantidade_parcelas
+        description: quantidade de parcelas
       - name: carencia
+        description: carencia das parcelas
       - name: status
+        description: status das propostas quanto a analise
+      - name: id_agencia
+        description: id da agencia em que foi feita a proposta
+      - name: status_agrupado
+        description: separacao das propostas em dois grupos, aprovadas e nao aprovadas
+      - name: valor_financiado
+        description: o valor total a ser financiado
+      - name: MontanteFinal
+        description: valor total a ser pago pelo cliente
+      - name: lucro
+        description: Lucro da operacao
+      - name: margem_lucro
+        description: margem de lucro da operacao

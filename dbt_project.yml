@@ -44,7 +44,6 @@ models:
     staging:
       +materialized: table
       +schema: stg
-
     seeds:
       banvic:
         erp_banvic:

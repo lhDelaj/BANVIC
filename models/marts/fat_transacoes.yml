@@ -9,7 +9,14 @@ models:
             - unique
             - not_null
       - name: id_transacao
+        description: id para cada transacao
       - name: id_conta
+        description: id relativo a conta em que foi feita a transacao
       - name: data_transacao
+        description: data da operacao
       - name: tipo_transacao
+        description: tipo de transacao
       - name: valor_transacao
+        description: valores das transacoes
+      - name: id_agencia
+        description: id relativo a agencia em que a conta na qual foi feita a operacao esta

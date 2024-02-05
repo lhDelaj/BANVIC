@@ -1,15 +1,18 @@
-dbtWelcome to your new dbt project!
+dbt models for Banco vitoria
 
-### Using the starter project
+Estre e um projeto para o banco vitoria.
 
-Try running the following commands:
-- dbt run
-- dbt test
+Executar o projeto 
+
+Carregar os arquivos CSVs no data warehouse.
+    - dbt seed
+Carregar e executar os modelos definidos
+    - dbt run
+Testar a integridade dos modelos
+    - dbt test
+Gerar documentacao para os modelos
+    - dbt docs generate
+Vizualizar documentacao gerada
+    - dbt docs serve
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices

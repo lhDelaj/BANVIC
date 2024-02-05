@@ -9,16 +9,32 @@ models:
             - unique
             - not_null
       - name: id_cliente
+        description: id para cada cliente
       - name: nome_completo
+        description: nome completo do cliente
       - name: tipo_cliente
+        description: tipo de cliente, pf ou pj
       - name: data_inclusao
+        description: data de inclusao do cliente ao banco
       - name: ano_nascimento
+        description: ano de nascimento do cliente
       - name: estado
+        description: estado do cliente
       - name: idade
+        description: idade do cliente
       - name: id_agencia
+        description: id relativo a agencia do cliente
       - name: id_colaborador
+        description: id do colaborador responsavel pelo cliente
       - name: saldo
+        description: saldo da conta do cliente
       - name: data_ultimo_lancamento
+        description: data do ultimo lancamento da conta do cliente
       - name: numero_propostas_credito
+        description: numero de propostas feitas ao cliente
       - name: numero_propostas_credito_aprovadas
+        description: numero de propostas aprovadas para o cliente
       - name: Taxa_aprovacao_credito
+        description: tava de aprovacao de credito do cliente
+      - name: status_conta
+        description: status da conta entre ativa e inativa
