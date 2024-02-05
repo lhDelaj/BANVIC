@@ -5,14 +5,21 @@ models:
     description: Dimensao com informacao das agencias
     columns: 
       - name: sk_agencia
-        description: Primary key para dimensao agencias
+        description: Chave primaria para a dimensao agencias
         tests:
           - unique
           - not_null
       - name: id_agencia
+        description: Id relativo a cada agencia
       - name: nome
+        description: nome da agencia
       - name: endereco
+        description: endereco da agencia
       - name: cidade
+        description: cidade da agencia
       - name: estado
+        description: estado da agencia
       - name: data_abertura
+        description: data da abertura da agencia
       - name: tipo_agencia
+        description: tipo de agencia

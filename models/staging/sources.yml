@@ -1,25 +1,57 @@
 version: 2
 
 sources: 
-  - name: banvic
+  - name: dbt_ldelajustina
+    schema: dbt_ldelajustina
+
+    description: data source do ERP da BANVIC
     tables:
       - name: agencias
-
-
+        description: Tabela com os dados das agencias
+        columns:
+          - name: cod_agencia
+            tests: 
+              - unique
+              - not_null                              
       - name: clientes
-
-
-
+        description: Tabela com os dados dos clientes
+        columns:
+          - name: cod_cliente
+            tests: 
+              - unique
+              - not_null  
       - name: colaborador_agencia
-
-
-
+        description: Tabela com a relacao entre colaborador e agencia
+        columns:
+          - name: cod_colaborador
+            tests: 
+              - unique
+              - not_null
       - name: colaboradores
-
-
+        description: Tabela com os dados dos colaboradores
+        columns:
+          - name: cod_colaborador
+            tests: 
+              - unique
+              - not_null
       - name: contas
-
-
+        description: Tabela com os dados das contas
+        columns:
+          - name: num_conta
+            tests: 
+              - unique
+              - not_null
       - name: propostas_credito
-  
+        description: Tabela com os dados das propostas de credito
+        columns:
+          - name: cod_proposta
+            tests: 
+              - unique
+              - not_null
       - name: transacoes
+        description: Tabela com os dados das transacoes bancarias
+        columns:
+          - name: cod_transacao
+            tests: 
+              - unique
+              - not_null

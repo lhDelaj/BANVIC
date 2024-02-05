@@ -9,10 +9,18 @@ models:
             - unique
             - not_null
       - name: id_colaborador
+        description: id para cada colaborador
       - name: nome_completo
+        description: nome completo do colaborador
       - name: idade
+        description: idade do colaborador
       - name: estado_colaborador
+        description: estado do colaborador 
       - name: id_agencia
+        description: agencia em que o colaborador trabalha
       - name: nome_agencia
+        description: nome da agencia que o colaborador trabalha
       - name: cidade
+        description: cidade do colaborador
       - name: tipo_agencia
+        description: tipo de agencia entre fisica e digital
